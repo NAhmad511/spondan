@@ -1,0 +1,27 @@
+{
+  "name": "spondan",
+  "version": "1.0.0",
+  "description": "স্পন্দন - A nostalgia music player",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "tailwindcss": "^4.0.0",
+    "postcss": "^8.4.32"
+  }
+}

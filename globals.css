@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #fbbf24;
+  --color-accent-dark: #f59e0b;
+  --color-dark: #0a0a0a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-bg {
+  background-image: url('/bg/scene-wide.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media (orientation: portrait) {
+  .hero-bg {
+    background-image: url('/bg/scene-tall.png');
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.glass {
+  border: 1px solid rgb(255 255 255 / 0.1);
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 0.15),
+    rgb(255 255 255 / 0.055)
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 48px -12px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.vinyl-spin {
+  animation: spin 8s linear infinite;
+}
+
+.colon-blink {
+  animation: blink 1s infinite;
+}
+
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.3;
+}
+
+.grain-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Scrollbar hide for mobile */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tabular numbers for time display */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Touch optimization */
+.touch-none {
+  touch-action: none;
+}
+
+/* Safe area support */
+.safe-top {
+  top: max(1rem, env(safe-area-inset-top));
+}
+
+.safe-left {
+  left: max(1rem, env(safe-area-inset-left));
+}
+
+.safe-right {
+  right: max(1rem, env(safe-area-inset-right));
+}
+
+.safe-bottom {
+  bottom: max(1rem, env(safe-area-inset-bottom));
+}
